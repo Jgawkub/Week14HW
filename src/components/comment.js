@@ -1,4 +1,5 @@
 import React from "react";
+import Rating from "./rating";
 import CommentBox from "./commentbox";
 export default class Comment extends React.Component{
    
@@ -44,7 +45,7 @@ export default class Comment extends React.Component{
         return(
             <div>
                 <button  className="btn btn-primary " id='submit' onClick={this.renderBox}>Add your own review</button>
-                {this.state.clickStatus==true ? <div> <textarea id='review' onChange={this.handleChange}> </textarea> <br/> <button className="btn btn-primary" onClick= {()=>{this.props.addReview(this.state.box);
+                {this.state.clickStatus==true ? <div><div><Rating/></div><textarea id='review'onChange={this.handleChange}/> <br/> <button className="btn btn-primary" onClick= {()=>{this.props.addReview(this.state.box);
                 this.reset()}}>Submit </button></div>: null}
                 
                 

@@ -13,7 +13,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.js'
 import './App.css';
 import List from './components/movielist';
-import Movie from './components/movie';
+
+import Rating from './components/rating';
 
  class App extends React.Component {
  
@@ -33,6 +34,7 @@ import Movie from './components/movie';
   render(){
     return <div className='container'>               
             <List/>
+    <Rating/>
     </div>
 }
 }

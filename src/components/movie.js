@@ -35,7 +35,7 @@ render(){
 //     <br/>
 //     Director:{this.props.director},
 //        </div>;
-
+//Below I am passing through the props from my movie list component to generate the list of films with the provided info, Title, Date, Director etc. 
    return (
    
     <div className="card pad ">
@@ -50,6 +50,9 @@ render(){
     Date: {this.props.info[0].date}
     <br/>
     Director: {this.props.info[0].director}
+    <br/>
+    Summary: {this.props.info[0].plot}
+    <br/>
     <br/>
     <Comment addReview={this.addReview}/>
     <br/>
