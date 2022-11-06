@@ -1,5 +1,6 @@
 import React from "react";
 import Comment from "./comment";
+import Rating from "./rating";
 
 export default class Movie extends React.Component{
     constructor(props){
@@ -7,13 +8,16 @@ export default class Movie extends React.Component{
     super(props);{
             this.state={
                 reviews:[],
-           
+                rating:[]
+                
         }
     }
     }
 
 
-addReview=(review)=>{
+
+
+addReview=(review)=>{//this pushes a review to the above array. 
         var newReview=this.state.reviews
         newReview.push(review)
         console.log(this.state.reviews)
@@ -22,12 +26,15 @@ addReview=(review)=>{
       }
 
 
-render(){
+render(){// this iterates through the array of reviews and publishes them below the movie.
     var review1=this.state.reviews
     var reviewRender=review1.map((r,index)=>
     <div key={r+index}>{r}</div>
     );
   
+
+
+
 //  <div>
 //     Title:{this.props.title}
 //     <br/>
@@ -54,16 +61,15 @@ render(){
     Summary: {this.props.info[0].plot}
     <br/>
     <br/>
-    <Comment addReview={this.addReview}/>
+    <Comment rating={this.state.rating} event1 ={this.event1} addRating={this.addRating} addReview={this.addReview}/>
     <br/>
     <div className="border-bottom border-dark"></div>
 
             </div>
-  
   <br/>
   <br/>
-    {reviewRender}
-  <br/>
+{reviewRender}
+
   <br/>
             </div>
     </div>
@@ -75,3 +81,26 @@ render(){
 
 
 }
+
+//Was trying to push stuff to that above array of rating but am getting some weird errors. 
+
+// addRating=(rating)=>{// 
+//         let rate1=this.state.rating
+//         rate1.push(rating)
+//         console.log(this.state.rating) 
+//         this.setState({rating:rate1})
+          
+//       }
+
+    // event1=()=>{// I grabbed the below code from a video about making a star rating. 
+    //   let stars=document.querySelectorAll('.stars a')
+    //         console.log('HI')
+    //         let starRender=stars.forEach((star,idx)=>{
+    //           star.addEventListener('click', ()=>{
+    //             let newRating=`${idx+1} out of 5 stars`
+    //             this.setState({rating:newRating})    
+    //             console.log(this.state.rating)   
+    //           });      
+    //         });
+            
+    //       }
